@@ -2,6 +2,8 @@
 
 This is a cloud-based development environment that can be accessed through a browser. It's set up with various tools and utilities to get you started with development right away.
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/two-headed-ogre/cloud-container-environment)
+
 ## Features
 
 - Pre-installed development tools:
@@ -12,10 +14,11 @@ This is a cloud-based development environment that can be accessed through a bro
 
 ## Getting Started
 
-1. Launch the environment in Gitpod
-2. Access the web server at port 8080
-3. Use the terminal to execute commands and test code
-4. Install additional packages as needed
+1. Click the "Open in Gitpod" button above
+2. Wait for the environment to initialize
+3. Access the web server at port 8080
+4. Use the terminal to execute commands and test code
+5. Install additional packages as needed
 
 ## How to Use
 
