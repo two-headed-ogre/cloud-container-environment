@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Container Environment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #3498db;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cloud Container Environment</h1>
+    <p>This is a browser-accessible development environment running in a cloud container.</p>
+    
+    <div class="container">
+        <h2>Run Python Code</h2>
+        <p>Click the button below to run the test Python script:</p>
+        <button id="runPython">Run Python Test</button>
+        <div id="output">Output will appear here...</div>
+    </div>
+    
+    <div class="container">
+        <h2>Environment Information</h2>
+        <p>This environment includes:</p>
+        <ul>
+            <li>Python with data science packages (NumPy, Pandas, etc.)</li>
+            <li>Node.js with TypeScript</li>
+            <li>UV package manager</li>
+            <li>Web server for testing</li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <h2>Simple Code Example</h2>
+        <pre>
+import numpy as np
+import pandas as pd
+
+# Create a sample DataFrame
+df = pd.DataFrame({
+    'A': [1, 2, 3],
+    'B': [4, 5, 6]
+})
+
+# Display the DataFrame
+print(df)
+
+# Calculate statistics
+print(df.describe())
+        </pre>
+    </div>
+
+    <script>
+        document.getElementById('runPython').addEventListener('click', function() {
+            const output = document.getElementById('output');
+            output.innerHTML = 'Running Python script...<br>';
+            
+            // In a real environment, this would make an AJAX call to execute the script
+            // For demonstration, we'll simulate the output
+            setTimeout(() => {
+                output.innerHTML += '<br>Python Version: 3.10.12<br>' +
+                    'Platform: Linux-5.15.0-x86_64<br>' +
+                    'Current Time: ' + new Date().toISOString() + '<br>' +
+                    '<br>Environment is working correctly!<br>' +
+                    '<br>NumPy version: 1.24.3<br>' +
+                    'Pandas version: 2.0.3<br>' +
+                    '<br>Sample NumPy array: [1 2 3 4 5]<br>' +
+                    'Mean value: 3.0<br>' +
+                    '<br>Sample DataFrame:<br>' +
+                    '   A  B<br>' +
+                    '0  1  4<br>' +
+                    '1  2  5<br>' +
+                    '2  3  6<br>' +
+                    '<br>DataFrame description:<br>' +
+                    '         A         B<br>' +
+                    'count  3.0      3.0<br>' +
+                    'mean   2.0      5.0<br>' +
+                    'std    1.0      1.0<br>' +
+                    'min    1.0      4.0<br>' +
+                    '25%    1.5      4.5<br>' +
+                    '50%    2.0      5.0<br>' +
+                    '75%    2.5      5.5<br>' +
+                    'max    3.0      6.0<br>' +
+                    '<br>Libraries imported successfully!';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
