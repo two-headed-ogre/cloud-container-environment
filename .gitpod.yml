@@ -1,0 +1,43 @@
+image: gitpod/workspace-full
+
+tasks:
+  - name: Setup Environment
+    init: |
+      # Install UV package manager
+      curl -fsSL https://github.com/astral-sh/uv/releases/download/0.1.25/uv-installer.sh | bash
+      
+      # Set up Python environment
+      python -m pip install --upgrade pip
+      pip install uv
+      uv pip install numpy pandas matplotlib jupyter
+      
+      # Install Node.js dependencies
+      npm install -g typescript ts-node
+      
+      # Print environment info
+      echo "Environment setup complete!"
+      python --version
+      node --version
+      uv --version
+
+  - name: Start Web Server
+    command: |
+      # Create a simple web server that we can access
+      mkdir -p public
+      echo "<html><body><h1>Hello from Cloud Container!</h1><p>This environment is ready for development.</p></body></html>" > public/index.html
+      cd public && python -m http.server 8080
+
+ports:
+  - port: 8080
+    onOpen: open-browser
+    visibility: public
+  - port: 3000-9000
+    onOpen: ignore
+    visibility: public
+
+vscode:
+  extensions:
+    - ms-python.python
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+    - GitHub.copilot
